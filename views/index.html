@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es6 moduel</title>
+  </head>
+
+  <body>
+    <h1>[[message]]</h1>
+
+    <div id="app">
+      <input type="text" v-model="message" />
+      <div>{{ message }}</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/index.js"></script>
+    <!-- 如果支持 module -->
+    <script type="module">
+      import('/js/data.js').then((response) => {
+        console.log(response, 'res');
+      });
+    </script>
+
+    <!-- nomodule不支持  -->
+    <script>
+      (function () {
+        var check = document.createElement('script');
+        if (!('noModule' in check) && 'onbeforeload' in check) {
+          var support = false;
+          document.addEventListener(
+            'beforeload',
+            function (e) {
+              if (e.target === check) {
+                support = true;
+              } else if (!e.target.hasAttribute('nomodule') || !support) {
+                return;
+              }
+              e.preventDefault();
+            },
+            true
+          );
+
+          check.type = 'module';
+          check.src = '.';
+          document.head.appendChild(check);
+          check.remove();
+        }
+      })();
+    </script>
+
+    <!-- 如果不支持，用systemjs -->
+    <script
+      nomodule
+      src="https://cdn.staticfile.org/systemjs/6.5.1/system.js"
+    ></script>
+    <script nomodule>
+      System.import('/js/data_bundle.js').then((response) => {
+        console.log('systemjs import', response);
+      });
+    </script>
+  </body>
+</html>
