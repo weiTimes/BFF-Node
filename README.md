@@ -1,3 +1,30 @@
+## 项目简介
+> BFF: Backend For Frontend，即增加一层为前端服务的中间件，可以在这层进行路由控制、接口聚合、跨域等处理。
+从零开始搭建BFF架构，会逐步完善成一个企业级的应用。中间会经历几个阶段，每一个阶段都会记录所完成的功能以及涉及到的知识点。
+
+## 技术栈
+* Koa
+* Swig
+* Php
+
+## 项目结构
+|-- assets 静态资源
+|-- config 配置文件
+|-- controllers 路由控制
+|-- middlewares 中间件
+|-- views swig模板
+|-- .babelrc babel配置文件
+|-- app.js 应用入口
+
+## 运行
+```
+git clone https://github.com/weiTimes/BFF-Node.git
+cd BFF-Node
+yarn
+yarn start
+```
+
+## 开始
 ### 第一阶段
 * 区分环境
 NODE_ENV = development | production
@@ -16,7 +43,7 @@ babel => data.js
 `yarn add @babel/core @babel/core @babel/plugin-transform-modules-systemjs`
 * 如果不支持nomodule(safari)
   https://gist.github.com/samthor/64b114e4a4f539915a95b91ffd340acc
-  ```
+ ```
   (function() {
   var check = document.createElement('script');
   if (!('noModule' in check) && 'onbeforeload' in check) {
