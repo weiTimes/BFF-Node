@@ -3,12 +3,17 @@ const render = require('koa-swig');
 const co = require('co');
 const staticServer = require('koa-static');
 const { historyApiFallback } = require('koa2-connect-history-api-fallback');
+const log4js = require('log4js');
 
 const config = require('./config');
 const initController = require('./controllers');
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = new Koa();
+
+var logger = log4js.getLogger();
+logger.level = 'debug';
+logger.debug('Some debug messages');
 
 // swig初始化
 app.context.render = co.wrap(

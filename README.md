@@ -1,6 +1,6 @@
 ## 项目简介
 > BFF: Backend For Frontend，即增加一层为前端服务的中间件，可以在这层进行路由控制、接口聚合、跨域等处理。
-从零开始搭建BFF架构，会逐步完善成一个企业级的应用。中间会经历几个阶段，每一个阶段都会记录所完成的功能以及涉及到的知识点。
+从零开始搭建BFF架构，会逐步完善成一个企业级的应用，简易的图书管理系统。中间会经历几个阶段，每一个阶段都会记录所完成的功能以及涉及到的知识点。
 
 ## 技术栈
 * Koa
@@ -66,11 +66,29 @@ babel => data.js
 ```
 * 跨域的解决方案
 跨域：协议、域名、端口不同
-- cors 让后端支持跨域
-- nodejs 代理，后端请求是不存在跨域的
-- nginx
-- 二级域名的话，可以设置document.domain改成一级域名
-- webSocket 在传输层请求，避免跨域
-- postMessage 设置允许跨域
+1. cors 让后端支持跨域
+2. nodejs 代理，后端请求是不存在跨域的
+3. nginx
+4. 二级域名的话，可以设置document.domain改成一级域名
+5. webSocket 在传输层请求，避免跨域
+6. postMessage 设置允许跨域
 
 script、img、link由于浏览器的白名单机制，不会跨域
+
+### 第二阶段
+1. 完善MVC
+* 完善models
+* 完善tests
+2. 完善工程化
+   * 错误处理-记录错误日志
+log4js
+   * commonjs => es6 import
+@babel/node 编译时转码
+   * 格式化后端返回的数据
+
+3. 函数式编程库的编写
+* underscore/lodash
+* 节流函数
+4. 测试
+e2e -> rize + puppeteer
+mocha/supertest/chai -> node接口测试
