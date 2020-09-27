@@ -1,0 +1,35 @@
+[2020-09-07T20:49:22.901] [ERROR] cheese - 自定义错误
+[2020-09-07T20:49:52.675] [ERROR] cheese - ctx.render2 is not a function
+[2020-09-07T20:50:43.488] [ERROR] cheese - TypeError: ctx.render2 is not a function
+    at actionIndex (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/IndexController.js:10:26)
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/@koa/router/lib/router.js:377:31)
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/middlewares/errorHandler.js:15:13
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/middlewares/errorHandler.js:6:15
+[2020-09-07T21:42:53.511] [ERROR] cheese - ReferenceError: Promsie is not defined
+    at Function.fetch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/utils/safeRequest.js:11:5)
+    at BooksModel.getBooksList (/Applications/XAMPP/xamppfiles/htdocs/yii-book/models/BooksModel.js:5:24)
+    at _callee$ (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/BooksController.js:11:35)
+    at tryCatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:293:22)
+    at Generator.next (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:118:21)
+    at asyncGeneratorStep (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/BooksController.js:16:103)
+    at _next (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/BooksController.js:18:194)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/BooksController.js:18:364
+    at new Promise (<anonymous>)
+[2020-09-07T21:44:09.952] [ERROR] cheese - ReferenceError: Promsie is not defined
+    at Function.fetch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/utils/safeRequest.js:11:5)
+    at BooksModel.getBooksList (/Applications/XAMPP/xamppfiles/htdocs/yii-book/models/BooksModel.js:5:24)
+    at _callee$ (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:11:33)
+    at tryCatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:293:22)
+    at Generator.next (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/regenerator-runtime/runtime.js:118:21)
+    at asyncGeneratorStep (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:16:103)
+    at _next (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:18:194)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:18:364
+    at new Promise (<anonymous>)

@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "start": "NODE_ENV=development nodemon ./app.js",
+    "start": "NODE_ENV=development nodemon --exec 'babel-node ./app.js'",
     "build": "NODE_ENV=production nodemon ./app.js",
     "build:babel": "babel ./assets/js/data.js -o ./assets/js/data_bundle.js"
   },
   "dependencies": {
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "@koa/router": "^9.4.0",
+    "axios": "^0.20.0",
     "co": "^4.6.0",
     "koa": "^2.13.0",
     "koa-static": "^5.0.0",

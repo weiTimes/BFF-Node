@@ -1,17 +1,15 @@
-const Controller = require('./Controller');
+import Controller from './Controller';
+import BooksModel from '../models/BooksModel';
 
 class ApiController extends Controller {
   constructor() {
     super();
   }
 
-  actionArray(ctx) {
-    ctx.body = [
-      {
-        name: 'yewei',
-      },
-    ];
+  async actionBookList(ctx) {
+    const booksModel = new BooksModel();
+    ctx.body = await booksModel.getBooksList();
   }
 }
 
-module.exports = ApiController;
+export default ApiController;

@@ -1,0 +1,16 @@
+import Controller from './Controller';
+import BooksModel from '../models/BooksModel';
+
+class BooksController extends Controller {
+  constructor() {
+    super();
+  }
+
+  async actionBookListPage(ctx) {
+    const booksModel = new BooksModel();
+    const res = await booksModel.getBooksList();
+    ctx.body = await ctx.render('books/list', { data: res.data });
+  }
+}
+
+export default BooksController;

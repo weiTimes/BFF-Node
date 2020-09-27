@@ -1,20 +1,21 @@
-const Koa = require('koa');
-const render = require('koa-swig');
-const co = require('co');
-const staticServer = require('koa-static');
-const { historyApiFallback } = require('koa2-connect-history-api-fallback');
-const log4js = require('log4js');
+import Koa from 'koa';
+import render from 'koa-swig';
+import co from 'co';
+import staticServer from 'koa-static';
+import { historyApiFallback } from 'koa2-connect-history-api-fallback';
+import log4js from 'log4js';
 
-const config = require('./config');
-const initController = require('./controllers');
-const errorHandler = require('./middlewares/errorHandler');
+import config from './config';
+import initController from './controllers';
+import errorHandler from './middlewares/errorHandler';
 
 const app = new Koa();
 
-var logger = log4js.getLogger();
-logger.level = 'debug';
-logger.debug('Some debug messages');
-
+log4js.configure({
+  appenders: { globalError: { type: 'file', filename: './logs/error.log' } },
+  categories: { default: { appenders: ['globalError'], level: 'error' } },
+});
+const logger = log4js.getLogger('cheese');
 // swig初始化
 app.context.render = co.wrap(
   render({
@@ -28,9 +29,9 @@ app.context.render = co.wrap(
 // 静态资源服务 assets
 app.use(staticServer(config.staticDir));
 // koa2支持单页应用
-app.use(historyApiFallback({ index: '/', whiteList: ['/api'] }));
+app.use(historyApiFallback({ index: '/', whiteList: ['/api', '/books'] }));
 // 错误处理
-errorHandler.error(app);
+errorHandler.error(app, logger);
 
 // 初始化路由
 initController(app);

@@ -82,8 +82,15 @@ script、img、link由于浏览器的白名单机制，不会跨域
 2. 完善工程化
    * 错误处理-记录错误日志
 log4js
-   * commonjs => es6 import
+   * 模块化改造  commonjs => es6 import export
 @babel/node 编译时转码
+@babel/preset-env
+```
+// .babelrc
+"presets": ["@babel/preset-env"]
+// package.json -> scripts
+"start": "NODE_ENV=development nodemon -exec 'babel-node ./app.js'"
+```
    * 格式化后端返回的数据
 
 3. 函数式编程库的编写
@@ -92,3 +99,5 @@ log4js
 4. 测试
 e2e -> rize + puppeteer
 mocha/supertest/chai -> node接口测试
+
+### 第三阶段
