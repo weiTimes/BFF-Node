@@ -33,3 +33,14 @@
     at _next (/Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:18:194)
     at /Applications/XAMPP/xamppfiles/htdocs/yii-book/controllers/ApiController.js:18:364
     at new Promise (<anonymous>)
+[2020-09-28T22:34:05.009] [ERROR] cheese - Error: Unexpected tag "includes '../../layout/index.html'" on line 1 in file /Applications/XAMPP/xamppfiles/htdocs/yii-book/src/web/views/books/pages/list.html.
+    at Object.exports.throwError (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/utils.js:188:9)
+    at parseTag (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/parser.js:675:13)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/parser.js:778:15
+    at Object.exports.each (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/utils.js:45:11)
+    at Object.exports.parse (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/parser.js:755:9)
+    at exports.Swig.parse (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/swig.js:383:19)
+    at exports.Swig.precompile (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/swig.js:526:23)
+    at exports.Swig.compile (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/swig.js:651:16)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/swig-templates/lib/swig.js:729:27
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)

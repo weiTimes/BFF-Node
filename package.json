@@ -1,6 +1,12 @@
 {
   "scripts": {
-    "start": "NODE_ENV=development nodemon --exec 'babel-node ./app.js'",
+    "client:dev": "scripty",
+    "client:prod": "scripty",
+    "server:dev": "scripty",
+    "server:start": "scripty",
+    "server:prod": "scripty",
+    "jscpd": "jscpd --pattern 'demos/*.js'",
+    "start": "NODE_ENV=development nodemon --exec 'babel-node ./src/server/app.js'",
     "build": "NODE_ENV=production nodemon ./app.js",
     "build:babel": "babel ./assets/js/data.js -o ./assets/js/data_bundle.js"
   },
@@ -8,18 +14,28 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.5",
     "@koa/router": "^9.4.0",
+    "D": "^1.0.0",
     "axios": "^0.20.0",
+    "babel-loader": "^8.1.0",
     "co": "^4.6.0",
+    "jscpd": "^3.3.19",
     "koa": "^2.13.0",
     "koa-static": "^5.0.0",
     "koa-swig": "^2.2.1",
     "koa2-connect-history-api-fallback": "^0.1.2",
     "log4js": "^6.3.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "scripty": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-modules-systemjs": "^7.10.5"
+    "@babel/plugin-transform-modules-systemjs": "^7.10.5",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.5.0",
+    "webpack-merge": "^5.1.4",
+    "yargs": "^16.0.3"
   }
 }

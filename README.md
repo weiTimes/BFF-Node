@@ -99,5 +99,20 @@ log4js
 4. 测试
 e2e -> rize + puppeteer
 mocha/supertest/chai -> node接口测试
-
+s
 ### 第三阶段
+* 优化npm script
+scripts
+package.json中的scripts对应scripty文件夹
+* 代码重复率检查
+jscpd
+```
+yarn run jscpd
+
+# 在reporter中查看
+```
+* 项目结构改造
+src/server
+src/web
+* 安装webpack
+yarn add webpack webpack-cli
