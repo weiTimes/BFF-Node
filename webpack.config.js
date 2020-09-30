@@ -3,6 +3,9 @@ const { merge } = require('webpack-merge');
 const glob = require('glob');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 // 判断打包的环境
 // 遍历所有的入口文件（多页应用）
 
@@ -19,7 +22,9 @@ entryFiles.forEach((file) => {
 
     htmlPlugins.push(
       new HtmlWebpackPlugin({
+        filename: `../web/views/${pageName}/pages/${actionName}.html`,
         template: `./src/web/views/${pageName}/pages/${actionName}.html`,
+        chunks: ['runtime', entryKey],
       })
     );
   }
@@ -39,9 +44,28 @@ const baseConfig = {
         test: /\.js$/,
         use: 'babel-loader',
       },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
     ],
   },
-  plugins: [...htmlPlugins],
+  plugins: [
+    ...htmlPlugins,
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, './src/web/views/layout'),
+          to: '../web/views/layout',
+        },
+        {
+          from: path.join(__dirname, './src/web/components'),
+          to: '../web/components',
+        },
+      ],
+    }),
+  ],
 };
 
 const envConfig = require(`./config/webpack.${argv.mode}.js`);

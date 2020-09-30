@@ -1,3 +1,5 @@
+import Banner from '../../components/Banner/banner';
+
 class BooksList {
   constructor() {
     console.log('BooksList init');
@@ -5,3 +7,4 @@ class BooksList {
 }
 
 new BooksList();
+new Banner();
