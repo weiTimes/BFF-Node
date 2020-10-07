@@ -1,30 +1,11 @@
-[2020-09-29T22:08:40.384] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'] {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'
-}
-[2020-09-29T22:09:24.032] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'] {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'
-}
-[2020-09-29T22:10:03.286] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/index.html'] {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/index.html'
-}
-[2020-09-30T16:39:07.557] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/index.html'] {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/index.html'
-}
-[2020-09-30T16:39:21.477] [ERROR] cheese - [Error: ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'] {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/web/views/books/pages/list.html'
-}
+[2020-10-07T16:04:51.128] [ERROR] cheese - ReferenceError: res is not defined
+    at actionBookCreatePage (/Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/server/controllers/BooksController.js:29:13)
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/@koa/router/lib/router.js:372:16
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/@koa/router/lib/router.js:377:31)
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/server/middlewares/errorHandler.js:21:13
+    at dispatch (/Applications/XAMPP/xamppfiles/htdocs/yii-book/node_modules/koa-compose/index.js:42:32)
+    at /Applications/XAMPP/xamppfiles/htdocs/yii-book/dist/server/middlewares/errorHandler.js:13:15

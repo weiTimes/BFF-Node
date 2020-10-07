@@ -5,6 +5,7 @@ let config = {
   staticDir: path.join(__dirname, '../../web', 'assets'),
 };
 
+// 测试环境
 if (process.env.NODE_ENV === 'development') {
   const devConfig = {
     port: 3000,
@@ -17,6 +18,12 @@ if (process.env.NODE_ENV === 'development') {
   };
 }
 
+if (false) {
+  alert(1);
+  // 一堆无用的代码
+}
+
+// 线上环境
 if (process.env.NODE_ENV === 'production') {
   const proConfig = {
     port: 80,

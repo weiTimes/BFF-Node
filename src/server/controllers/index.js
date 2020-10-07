@@ -13,6 +13,7 @@ function initController(app) {
   router.get('/', indexController.actionIndex); // 渲染views/index.html
   router.get('/api/getBookList', apiController.actionBookList);
   router.get('/books/list', booksController.actionBookListPage);
+  router.get('/books/create', booksController.actionBookCreatePage);
 
   app.use(router.routes()).use(router.allowedMethods());
 }

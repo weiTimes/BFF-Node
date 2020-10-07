@@ -115,4 +115,25 @@ yarn run jscpd
 src/server
 src/web
 * 安装webpack
-yarn add webpack webpack-cli
+yarn add webpack webpack-cli 
+
+### 第四阶段
+目标：实现一个webpack插件，将webpack打包出来注入的css、js插入到正确的位置
+* 插件实现：利用webpack的钩子函数
+* gulp打包node项目
+  gulp-babel 转译
+  > nodejs 热更新
+  gulp-watch 监听到变化重新打包
+  yarn run test 启动服务，监听到变化重启服务
+* tree shaking 
+1. gulp-rollup
+清除无用的代码
+2. @rollup/plugin-replace
+去掉判断开发环境的代码
+* webpack环境配置
+1. hash
+2. sourcemap映射 - 打包前 => 打包后，便于调试
+3. 压缩html, css
+4. webpack-bundle-analyzer 打包资源分析
+5. webpack-build-notifier 打包完成会提示
+6. 热重载
